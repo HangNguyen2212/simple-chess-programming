@@ -16,6 +16,26 @@ namespace ChessKing
 		};
 
 		/// <summary>
+		/// status of chess
+		/// </summary>
+		private bool _die = false;
+
+		/// <summary>
+		/// status of chess
+		/// </summary>
+		public bool IsDie
+		{
+			get
+			{
+				return _die;
+			}
+			set
+			{
+				_die = value;
+			}
+		}
+
+		/// <summary>
 		/// color of chess
 		/// </summary>
 		private int team = (int)ColorTeam.None;
@@ -35,56 +55,35 @@ namespace ChessKing
 			}
 		}
 
-		private bool isKing = false;
-
-		/// <summary>
-		/// color of chess
-		/// </summary>
+        protected bool isKing = false;
 		public bool IsKing
 		{
-			get
-			{
-				return isKing;
-			}
-			set
-			{
-				isKing = value;
-			}
+            get
+            {
+                return isKing;
+            }
+            set
+            {
+                isKing = value;
+            }
 		}
 
-		private bool isDie = false;
+        private int evaluation;
+        public int Evaluation
+        {
+            get
+            {
+                return evaluation;
+            }
+            set
+            {
+                evaluation = value;
+            }
+        }
 
-		/// <summary>
-		/// color of chess
-		/// </summary>
-		public bool IsDie
+        public virtual void FindWay(ref ChessSquare[,] board, int row, int col)
 		{
-			get
-			{
-				return isDie;
-			}
-			set
-			{
-				isDie = value;
-			}
-		}
 
-		private int evaluation;
-		public int Evaluation
-		{
-			get
-			{
-				return evaluation;
-			}
-			set
-			{
-				evaluation = value;
-			}
-		}
-
-		public virtual void FindWay(ref ChessSquare[,] board, int row, int col)
-		{
-			
 		}
 
 	}
