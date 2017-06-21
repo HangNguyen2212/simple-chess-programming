@@ -7,10 +7,14 @@ using System.Drawing;
 
 namespace ChessKing
 {
-	class Queen : Chess
-	{
-		string linkPoint = "Image\\circle.png";
-		public override void FindWay(ref ChessSquare[,] board, int row, int col)
+    class Queen : Chess
+    {
+        string linkPoint = "Image\\circle.png";
+        public Queen()
+		{
+			this.isQueen = true;
+		}
+        public override void FindWay(ChessSquare[,] board, int row, int col)
 		{
 			//move like castle
 			for (int j = col - 1; j >= 0; j--)
@@ -18,7 +22,8 @@ namespace ChessKing
 				if (board[row, j].Chess == null)
 				{
 					//load blue poin on button, in the way of piece
-					board[row, j].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+					    board[row, j].Image = Image.FromFile(linkPoint);
 					Common.CanMove.Add(board[row, j]);
 				}
 				else
@@ -26,8 +31,9 @@ namespace ChessKing
 					//square is not empty, check color ,if diffirence about color, change back color
 					if (this.Team != board[row, j].Chess.Team)
 					{
-						board[row, j].BackColor = Color.Red;
-						Common.CanEat.Add(board[row, j]);
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+						    board[row, j].BackColor = Color.Red;
+						Common.CanMove.Add(board[row, j]);
 					}
 					else
 					{
@@ -42,15 +48,17 @@ namespace ChessKing
 			{
 				if (board[row, j].Chess == null)
 				{
-					board[row, j].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+					    board[row, j].Image = Image.FromFile(linkPoint);
 					Common.CanMove.Add(board[row, j]);
 				}
 				else
 				{
 					if (this.Team != board[row, j].Chess.Team)
 					{
-						board[row, j].BackColor = Color.Red;
-						Common.CanEat.Add(board[row, j]);
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+						    board[row, j].BackColor = Color.Red;
+						Common.CanMove.Add(board[row, j]);
 					}
 					else
 					{
@@ -64,15 +72,17 @@ namespace ChessKing
 			{
 				if (board[i, col].Chess == null)
 				{
-					board[i, col].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+					    board[i, col].Image = Image.FromFile(linkPoint);
 					Common.CanMove.Add(board[i, col]);
 				}
 				else
 				{
 					if (this.Team != board[i, col].Chess.Team)
 					{
-						board[i, col].BackColor = Color.Red;
-						Common.CanEat.Add(board[i, col]);
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+						    board[i, col].BackColor = Color.Red;
+						Common.CanMove.Add(board[i, col]);
 					}
 					else
 					{
@@ -86,15 +96,17 @@ namespace ChessKing
 			{
 				if (board[i, col].Chess == null)
 				{
-					board[i, col].Image = Image.FromFile(linkPoint);
+                    if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+					    board[i, col].Image = Image.FromFile(linkPoint);
 					Common.CanMove.Add(board[i, col]);
 				}
 				else
 				{
 					if (this.Team != board[i, col].Chess.Team)
 					{
-						board[i, col].BackColor = Color.Red;
-						Common.CanEat.Add(board[i, col]);
+                        if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+						    board[i, col].BackColor = Color.Red;
+						Common.CanMove.Add(board[i, col]);
 					}
 					else
 					{
@@ -119,7 +131,8 @@ namespace ChessKing
 						if (board[i, j].Chess == null)
 						{
 							//load blue poin on button, in the way of piece
-							board[i, j].Image = Image.FromFile(linkPoint);
+                            if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+							    board[i, j].Image = Image.FromFile(linkPoint);
 							Common.CanMove.Add(board[i, j]);
 						}
 						else
@@ -127,8 +140,9 @@ namespace ChessKing
 							//square is not empty, check color ,if diffirence about color, change back color
 							if (this.Team != board[i, j].Chess.Team)
 							{
-								board[i, j].BackColor = Color.Red;
-								Common.CanEat.Add(board[i, j]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[i, j].BackColor = Color.Red;
+								Common.CanMove.Add(board[i, j]);
 							}
 							else
 							{
@@ -159,7 +173,8 @@ namespace ChessKing
 						if (board[i, j].Chess == null)
 						{
 							//load blue poin on button, in the way of piece
-							board[i, j].Image = Image.FromFile(linkPoint);
+                            if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+							    board[i, j].Image = Image.FromFile(linkPoint);
 							Common.CanMove.Add(board[i, j]);
 						}
 						else
@@ -167,8 +182,9 @@ namespace ChessKing
 							//square is not empty, check color ,if diffirence about color, change back color
 							if (this.Team != board[i, j].Chess.Team)
 							{
-								board[i, j].BackColor = Color.Red;
-								Common.CanEat.Add(board[i, j]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[i, j].BackColor = Color.Red;
+								Common.CanMove.Add(board[i, j]);
 							}
 							else
 							{
@@ -199,7 +215,8 @@ namespace ChessKing
 						if (board[i, j].Chess == null)
 						{
 							//load blue poin on button, in the way of piece
-							board[i, j].Image = Image.FromFile(linkPoint);
+                            if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+							    board[i, j].Image = Image.FromFile(linkPoint);
 							Common.CanMove.Add(board[i, j]);
 						}
 						else
@@ -207,8 +224,9 @@ namespace ChessKing
 							//square is not empty, check color ,if diffirence about color, change back color
 							if (this.Team != board[i, j].Chess.Team)
 							{
-								board[i, j].BackColor = Color.Red;
-								Common.CanEat.Add(board[i, j]);
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+								    board[i, j].BackColor = Color.Red;
+								Common.CanMove.Add(board[i, j]);
 							}
 							else
 							{
@@ -239,7 +257,8 @@ namespace ChessKing
 						if (board[i, j].Chess == null)
 						{
 							//load blue poin on button, in the way of piece
-							board[i, j].Image = Image.FromFile(linkPoint);
+                            if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
+							    board[i, j].Image = Image.FromFile(linkPoint);
 							Common.CanMove.Add(board[i, j]);
 						}
 						else
@@ -247,8 +266,9 @@ namespace ChessKing
 							//square is not empty, check color ,if diffirence about color, change back color
 							if (this.Team != board[i, j].Chess.Team)
 							{
+                                if (Common.IsTurn % 2 == 0 || Common.IsMode == true)
 								board[i, j].BackColor = Color.Red;
-								Common.CanEat.Add(board[i, j]);
+								Common.CanMove.Add(board[i, j]);
 							}
 							else
 							{
