@@ -36,7 +36,7 @@ namespace ChessKing
 		string linkBlackKing = "Image\\Chess_kdt60.png";
 		string linkBlackPawn = "Image\\Chess_pdt60.png";
 
-
+		
 
 		public frmChessKing()
 		{
@@ -54,22 +54,22 @@ namespace ChessKing
 					{
 						if (col % 2 == 0)
 						{
-							temp.BackColor = Color.NavajoWhite;
+							temp.BackColor = Color.LavenderBlush;
 						}
 						else
 						{
-							temp.BackColor = Color.SaddleBrown;
+							temp.BackColor = Color.DarkSlateGray;
 						}
 					}
 					else
 					{
 						if (col % 2 == 0)
 						{
-							temp.BackColor = Color.SaddleBrown;
+							temp.BackColor = Color.DarkSlateGray;
 						}
 						else
 						{
-							temp.BackColor = Color.NavajoWhite;
+							temp.BackColor = Color.LavenderBlush;
 						}
 					}
 
@@ -80,6 +80,8 @@ namespace ChessKing
 
 					Board[row, col].findWayAction += new FindWayAction(OnAction);
 					this.Controls.Add(Board[row, col]);
+
+					//Display();
 				}
 			}
 		}
@@ -90,9 +92,8 @@ namespace ChessKing
 			Board = Common.Board;
 		}
 
-		private void btnPlay_Click(object sender, EventArgs e)
+		private void Display()
 		{
-			//load piece on Board 
 			Chess tempChess;
 
 			//pawn
@@ -139,6 +140,7 @@ namespace ChessKing
 					Board[7, 7].Image = Image.FromFile(linkWhiteCastle);
 					Board[7, 0].Chess.Evaluation = 50;
 					Board[7, 7].Chess.Evaluation = 50;
+
 				}
 			}
 
@@ -155,6 +157,7 @@ namespace ChessKing
 					Board[0, 6].Image = Image.FromFile(linkBlackKnight);
 					Board[0, 1].Chess.Evaluation = -30;
 					Board[0, 6].Chess.Evaluation = -30;
+
 				}
 				else
 				{
@@ -191,6 +194,7 @@ namespace ChessKing
 					Board[7, 5].Image = Image.FromFile(linkWhiteBishop);
 					Board[7, 2].Chess.Evaluation = 30;
 					Board[7, 5].Chess.Evaluation = 30;
+
 				}
 			}
 
@@ -223,6 +227,72 @@ namespace ChessKing
 			Common.Board = Board;
 		}
 
+		private void btn2Player_Click(object sender, EventArgs e)
+		{
+			Display();
+			Common.IsMode = true;
+			bnt1Player.Enabled = false;
+		}
+
+		private void bnt1Player_Click(object sender, EventArgs e)
+		{
+			Display();
+			Common.IsMode = false;
+			btn2Player.Enabled = true;
+		}
+
+		private void bntQuit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Form2 frmAbout = new Form2();
+			frmAbout.ShowDialog();
+		}
+		/// <summary>
+		/// lua chon do sau cho minimax
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void toolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 1;
+		}
+
+		private void toolStripMenuItem3_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 2;
+		}
+
+		private void toolStripMenuItem4_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 3;
+		}
+
+		private void toolStripMenuItem5_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 4;
+		}
+
+		private void toolStripMenuItem6_Click(object sender, EventArgs e)
+		{
+			Common.Depth = 5;
+		}
+
+		private void onlineToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			string url = "http://www.wikihow.com/Play-Chess";
+
+			System.Diagnostics.Process.Start(url);
+		}
+
+		private void offlineToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Form3 frmHelp = new Form3();
+			frmHelp.ShowDialog();
+		}
 	}
 }
 
