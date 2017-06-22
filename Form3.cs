@@ -19,7 +19,7 @@ namespace ChessKing
 
 		private void Form3_Load(object sender, EventArgs e)
 		{
-			System.Diagnostics.Process.Start("File\\1234.pdf");
+			System.Diagnostics.Process.Start("File\\HD.pdf");
 			this.Close();
 		}
 

@@ -33,7 +33,7 @@
 			// 
 			// btnBack
 			// 
-			this.btnBack.Location = new System.Drawing.Point(704, 499);
+			this.btnBack.Location = new System.Drawing.Point(713, 565);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(75, 23);
 			this.btnBack.TabIndex = 6;
@@ -46,10 +46,12 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
+			this.BackgroundImage = global::ChessKing.Properties.Resources.Background2;
 			this.ClientSize = new System.Drawing.Size(800, 600);
 			this.Controls.Add(this.btnBack);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Form2";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form2";
 			this.Load += new System.EventHandler(this.Form2_Load);
 			this.ResumeLayout(false);

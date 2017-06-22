@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChessKing));
 			this.btn2Player = new System.Windows.Forms.Button();
 			this.bnt1Player = new System.Windows.Forms.Button();
 			this.bntQuit = new System.Windows.Forms.Button();
@@ -185,10 +186,12 @@
 			this.Controls.Add(this.menuStrip1);
 			this.Cursor = System.Windows.Forms.Cursors.Default;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "frmChessKing";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Chess King";
 			this.Load += new System.EventHandler(this.frmChessKing_Load);
 			this.menuStrip1.ResumeLayout(false);
