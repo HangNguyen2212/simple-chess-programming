@@ -178,7 +178,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackgroundImage = global::ChessKing.Properties.Resources.Background;
+			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+			this.BackgroundImage = global::ChessKing.Properties.Resources.B1;
 			this.ClientSize = new System.Drawing.Size(780, 557);
 			this.Controls.Add(this.bntQuit);
 			this.Controls.Add(this.bnt1Player);
